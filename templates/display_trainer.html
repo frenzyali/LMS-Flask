@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        /* Table Container */
+        table {
+            width: 80%; /* Makes the table occupy 80% of the page width */
+            margin: 20px auto; /* Centers the table on the page */
+            border-collapse: collapse; /* Removes extra spacing between table cells */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a modern look */
+        }
+
+        /* Table Headers */
+        th {
+            background-color: #4CAF50; /* Green background for headers */
+            color: white; /* White text color for contrast */
+            padding: 10px; /* Adds spacing inside the header cells */
+            text-align: center; /* Centers the text in the header cells */
+            font-size: 16px;
+        }
+
+        /* Table Data Cells */
+        td {
+            padding: 10px; /* Adds spacing inside the data cells */
+            text-align: center; /* Centers the text in data cells */
+            border: 1px solid #ddd; /* Adds a light border between cells */
+            font-size: 14px;
+        }
+
+        /* Alternate Row Colors */
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray for even rows */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff; /* White for odd rows */
+        }
+
+        /* Hover Effect for Rows */
+        tr:hover {
+            background-color: #f1f1f1; /* Slightly darker background on hover */
+        }
+
+        /* Table Heading Row */
+        th[colspan] {
+            font-size: 20px; /* Larger font size for the main heading */
+            padding: 15px;
+            background-color: #333; /* Darker background for the heading */
+        }
+
+        /* Delete Button Styling */
+        button {
+            background-color: #f44336; /* Red background */
+            color: white; /* White text */
+            border: none; /* Removes default border */
+            padding: 10px 20px; /* Adds padding */
+            text-align: center; /* Centers the text */
+            text-decoration: none; /* Removes underline from text */
+            display: inline-block; /* Allows setting width and height */
+            font-size: 14px; /* Sets font size */
+            margin: 4px 2px; /* Adds some margin */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            border-radius: 4px; /* Rounds the corners */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        button:hover {
+            background-color: #d32f2f; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="6">Trainer Course Details</th>
+        </tr>
+        <tr>
+            <th>Sr.no</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Designation</th>
+            <th>Course Name</th>
+            <th>Action</th>
+        </tr>
+        {% for i in output_data %}
+        <tr>
+            <td> {{ i[0] }} </td>
+            <td> {{ i[1] }} </td>
+            <td> {{ i[2] }} </td>
+            <td> {{ i[3] }} </td>
+            <td> {{ i[4] }} </td>
+            <td>
+                <a href="{{ url_for('delete_trainer', t_id=i[0]) }}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

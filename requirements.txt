@@ -1,0 +1,7 @@
+Flask
+Flask-MySQL
+Flask-MySQLdb
+mysqlclient
+mysql-connector
+datetime
+Flask-Login

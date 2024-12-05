@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trainer Details</title>
+        <style>
+            /* Page Styling */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            /* Center the Form */
+            table {
+                width: 50%; /* Adjust table width */
+                background-color: #ffffff; /* White background for form */
+                border-collapse: collapse; /* Removes spacing between cells */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+                border-radius: 8px; /* Rounded corners */
+                overflow: hidden; /* Smooth edges */
+            }
+
+            /* Form Heading */
+            h1 {
+                text-align: center;
+                color: #4CAF50; /* Green heading */
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            /* Table Rows */
+            td {
+                padding: 15px; /* Space inside each cell */
+                text-align: left; /* Align text to the left */
+                border: none; /* Removes the border around cells */
+                font-size: 16px;
+            }
+
+            /* Input Fields */
+            input[type="text"] {
+                width: 95%; /* Full width for input fields */
+                padding: 8px;
+                font-size: 14px;
+                border: 1px solid #ccc; /* Light gray border */
+                border-radius: 4px; /* Rounded edges */
+                outline: none; /* Removes focus outline */
+            }
+
+            input[type="text"]:focus {
+                border-color: #4CAF50; /* Green border on focus */
+                box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Glow effect */
+            }
+
+            /* Submit Button */
+            input[type="submit"] {
+                background-color: #4CAF50; /* Green background */
+                color: white; /* White text */
+                border: none; /* Removes border */
+                border-radius: 4px; /* Rounded corners */
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer; /* Pointer cursor on hover */
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049; /* Darker green on hover */
+            }
+
+            /* Table Alignment */
+            tr:last-child td {
+                text-align: center; /* Centers the submit button */
+            }
+        </style>
+    </head>
+    <body>
+        <table border="3">
+            <form method="post" action="{{ url_for('trainer_create') }}" name="trainer form">
+                <tr>
+                    <td> First Name </td>
+                    <td>
+                         <input type="text" name="first-name"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td> Last Name </td>
+                    <td>
+                         <input type="text" name="last-name"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td> Designation </td>
+                    <td>
+                         <input type="text" name="designation"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td> Course Name </td>
+                    <td>
+                         <input type="text" name="course-name"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                         <input type="submit" value="Submit"> 
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html>
